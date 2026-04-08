@@ -23,3 +23,9 @@ resource "cloudflare_pages_project" "khangduytran" {
   name              = "khangduytran"
   production_branch = "master"
 }
+
+resource "cloudflare_pages_domain" "khangduytran_xyz" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.khangduytran.name
+  domain       = "khangduytran.xyz"
+}

@@ -124,42 +124,44 @@ export default function App() {
       tagline:
         "Cal Poly Computer Engineering sophomore focused on DevOps foundations through cloud infrastructure, automation, and reliable systems.",
       domain: "khangduytran.xyz",
+      docs: "docs.khangduytran.xyz",
       email: "khangtran082005@gmail.com",
       github: "https://github.com/khang2005",
-      linkedin: "https://www.linkedin.com/in/YOUR USERNAME"
+      linkedin: "https://www.linkedin.com/in/khang-tran-4ba6b3285"
     };
   }, []);
 
   const projects = useMemo(() => {
     return [
       {
+        id: "ai",
+        name: "AI Map Chatbox",
+        short:
+          "Web application combining a chatbot with an interactive Google Map, powered by Gemini AI for location-based queries.",
+        what: [
+          "React frontend with chat interface and Google Maps integration",
+          "FastAPI backend handling Gemini AI requests",
+          "Docker Compose for containerized deployment",
+          "Secure API key management for both services"
+        ],
+        tags: ["React", "FastAPI", "Gemini AI", "Docker"],
+        liveUrl: "https://github.com/khang2005/AI_chatbox_map",
+        codeUrl: "https://github.com/khang2005/AI_chatbox_map"
+      },
+      {
         id: "infra",
         name: "Automated Cloud Infrastructure Pipeline",
         short:
-          "Provisioned Azure infrastructure with Terraform, safer GitHub Actions auth, and automated cleanup.",
+          "Azure cloud deployment with Terraform, Python scripts, Docker, and GitHub Actions for repeatable infrastructure.",
         what: [
-          "Terraform modules for repeatable infra",
-          "OIDC auth for GitHub Actions to reduce secret handling",
-          "Cleanup workflows to control cloud costs",
-          "DNS binding and deployment automation"
+          "Terraform modules for repeatable Azure infrastructure",
+          "Python scripts for network monitoring and port scanning",
+          "Docker containerization with multi-stage builds",
+          "System reporting and resource usage automation"
         ],
-        tags: ["Terraform", "Azure", "CI CD", "Automation"],
-        liveUrl: "https://YOUR PROJECT LINK HERE",
-        codeUrl: "https://YOUR REPO LINK HERE"
-      },
-      {
-        id: "maps",
-        name: "AI Map Assistant",
-        short:
-          "Natural language to map results with careful API protection and key restrictions.",
-        what: [
-          "Query to location results workflow",
-          "Secure handling of API keys and quotas",
-          "Clean UX for fast searching and browsing"
-        ],
-        tags: ["Python", "APIs", "Security", "UX"],
-        liveUrl: "https://YOUR PROJECT LINK HERE",
-        codeUrl: "https://YOUR REPO LINK HERE"
+        tags: ["Terraform", "Azure", "Python", "Docker"],
+        liveUrl: "https://github.com/khang2005/Cloud_deployment_project",
+        codeUrl: "https://github.com/khang2005/Cloud_deployment_project"
       }
     ];
   }, []);
@@ -417,7 +419,7 @@ export default function App() {
           <div className="sectionHead">
             <div>
               <h2>Contact</h2>
-              <p className="muted">Best way is email. GitHub is the second best.</p>
+              <p className="muted">Best way is email. Check out my docs site for detailed project documentation.</p>
             </div>
           </div>
 
@@ -436,9 +438,9 @@ export default function App() {
             </div>
 
             <div className="contactRow">
-              <div className="contactLabel">Site</div>
-              <div className="contactValue mono">{profile.domain}</div>
-              <a className="btnSmall" href={"https://" + profile.domain} target="_blank" rel="noreferrer">Open</a>
+              <div className="contactLabel">Docs</div>
+              <div className="contactValue mono">{profile.docs}</div>
+              <a className="btnSmall" href={"https://" + profile.docs} target="_blank" rel="noreferrer">Open</a>
             </div>
           </div>
         </section>
